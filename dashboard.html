@@ -1,34 +1,77 @@
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-  import { getFirestore, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CrisisMesh Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+    .entry {
+      background: white;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    a {
+      font-weight: bold;
+      color: blue;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
 
-  const firebaseConfig = {
-    // your Firebase config here
-  };
+  <h1>📊 Live Help Requests</h1>
 
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+  <!-- 🔗 Navigation link -->
+  <div style="margin-bottom: 20px;">
+    <a href="index.html">🏠 Back to Help Form</a>
+  </div>
 
-  const container = document.getElementById("dashboard");
+  <!-- 🔥 Data container -->
+  <div id="dashboard">Loading...</div>
 
-  onSnapshot(collection(db, "help_requests"), (snapshot) => {
-    container.innerHTML = "";
-    snapshot.forEach(doc => {
-      const data = doc.data();
-      container.innerHTML += `
-        <div class="entry">
-          <h3>${data.city} - ${data.helpType}</h3>
-          <p><b>Urgency:</b> ${data.urgency}</p>
-          <p><b>Bot?</b> ${data.is_human ? "✅ Human" : "❌ Bot"} (${data.confidence}%)</p>
-          <p><b>Score:</b> ${data.deprivation_score}</p>
-        </div>
-        <hr>
-      `;
+  <!-- 🔌 Firebase script -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+    import { getFirestore, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+  
+  apiKey: "AIzaSyBITSHmCb_Nu0D2lqGEp-qj-Qay8-OKRM4",
+  authDomain: "crisismesh.firebaseapp.com",
+  projectId: "crisismesh",
+  storageBucket: "crisismesh.firebasestorage.app",
+  messagingSenderId: "663143993924",
+  appId: "1:663143993924:web:856281292c1ee4ab386211",
+  measurementId: "G-HHQE1GQLMN"
+
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const container = document.getElementById("dashboard");
+
+    onSnapshot(collection(db, "help_requests"), (snapshot) => {
+      container.innerHTML = "";
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        container.innerHTML += `
+          <div class="entry">
+            <h3>${data.city || "Unknown"} – ${data.helpType || "N/A"}</h3>
+            <p><b>Urgency:</b> ${data.urgency || "N/A"}</p>
+            <p><b>Bot?</b> ${data.is_human ? "✅ Human" : "❌ Bot"} (${data.confidence || "N/A"}%)</p>
+            <p><b>Score:</b> ${data.deprivation_score || "N/A"}</p>
+            <p><i>${data.description || ""}</i></p>
+          </div>
+        `;
+      });
     });
-  });
+  </script>
 
-  <div style="margin-top: 20px;">
-<a href="index.html">🏠 Back to Help Form</a>
- </div>
-
-</script>
+</body>
+</html>
