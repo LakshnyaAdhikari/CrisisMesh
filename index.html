@@ -1,32 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>CrisisMesh</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrisisMesh – Connect. Support. Thrive.</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <h1>CrisisMesh – Request or Offer Help</h1>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>CrisisMesh</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="#need-help-section">I Need Help</a>
+                <a href="dashboard.html">Live Dashboard</a>
+                </nav>
+        </div>
+    </header>
 
-  <div class="form-container">
-    <form id="needForm">
-      <h2>I Need Help</h2>
-      <input type="text" id="city" placeholder="Your City" required />
-      <select id="helpType">
-        <option>Food</option>
-        <option>Shelter</option>
-        <option>Money</option>
-        <option>Medical</option>
-      </select>
-      <input type="text" id="urgency" placeholder="Urgency Level (low, medium, high)" required />
-      <textarea id="description" placeholder="Describe your situation"></textarea>
-      <button type="submit">Submit Need</button>
-    </form>
-  </div>
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Your Bridge to Support in Times of Need</h2>
+                    <p>CrisisMesh connects individuals in urgent need with those who can provide assistance. Whether it's food, shelter, medical aid, or financial support, we're here to facilitate connection and help communities thrive.</p>
+                    <a href="#need-help-section" class="btn btn-primary">Get Help Now</a>
+                </div>
+            </div>
+        </section>
 
-   <div style="margin-top: 20px;">
-    <a href="dashboard.html" style="font-weight: bold; color: blue;">📊 See Live Dashboard</a>
-  </div>
+        <section id="need-help-section" class="form-section">
+            <div class="container">
+                <div class="form-card">
+                    <h3><i class="fas fa-hand-holding-heart"></i> I Need Help</h3>
+                    <p class="form-description">Please fill out the form below to submit your request for assistance. Your information will be handled with care.</p>
+                    <form id="needForm">
+                        <div class="form-group">
+                            <label for="city">Your City</label>
+                            <input type="text" id="city" placeholder="e.g., New Delhi" required aria-label="Your City" />
+                        </div>
+                        <div class="form-group">
+                            <label for="helpType">Type of Help Needed</label>
+                            <select id="helpType" aria-label="Type of Help Needed">
+                                <option value="" disabled selected>Select a category</option>
+                                <option value="Food">Food</option>
+                                <option value="Shelter">Shelter</option>
+                                <option value="Money">Money</option>
+                                <option value="Medical">Medical</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="urgency">Urgency Level</label>
+                            <select id="urgency" aria-label="Urgency Level">
+                                <option value="" disabled selected>Select urgency</option>
+                                <option value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High">High</option>
+                                <option value="Critical">Critical</option>
+                            </select>
+                            <small class="help-text">Please be realistic to help us prioritize effectively.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Describe Your Situation</label>
+                            <textarea id="description" placeholder="Briefly explain your current situation and how this help will support you. Be specific about your needs (e.g., 'Need food for 3 people for 2 days', 'Looking for temporary shelter for a family of 4')." rows="5" aria-label="Describe your situation"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit"><i class="fas fa-paper-plane"></i> Submit Need</button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
-  <script type="module" src="script.js"></script>
+        <section class="dashboard-link-section">
+            <div class="container">
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-chart-line"></i> Track Real-Time Requests</h3>
+                    <p>Curious about the current needs and offers in your community? Explore our live dashboard to see real-time data and insights into ongoing crisis situations.</p>
+                    <a href="dashboard.html" class="btn btn-secondary">📊 View Live Dashboard</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 CrisisMesh. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
 </body>
 </html>
