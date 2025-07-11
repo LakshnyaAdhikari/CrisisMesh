@@ -1,0 +1,29 @@
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+  import { getFirestore, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    // your Firebase config here
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const container = document.getElementById("dashboard");
+
+  onSnapshot(collection(db, "help_requests"), (snapshot) => {
+    container.innerHTML = "";
+    snapshot.forEach(doc => {
+      const data = doc.data();
+      container.innerHTML += `
+        <div class="entry">
+          <h3>${data.city} - ${data.helpType}</h3>
+          <p><b>Urgency:</b> ${data.urgency}</p>
+          <p><b>Bot?</b> ${data.is_human ? "✅ Human" : "❌ Bot"} (${data.confidence}%)</p>
+          <p><b>Score:</b> ${data.deprivation_score}</p>
+        </div>
+        <hr>
+      `;
+    });
+  });
+</script>
