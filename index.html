@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CrisisMesh</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CrisisMesh – Request or Offer Help</h1>
+
+  <div class="form-container">
+    <form id="needForm">
+      <h2>I Need Help</h2>
+      <input type="text" id="city" placeholder="Your City" required />
+      <select id="helpType">
+        <option>Food</option>
+        <option>Shelter</option>
+        <option>Money</option>
+        <option>Medical</option>
+      </select>
+      <input type="text" id="urgency" placeholder="Urgency Level (low, medium, high)" required />
+      <textarea id="description" placeholder="Describe your situation"></textarea>
+      <button type="submit">Submit Need</button>
+    </form>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
