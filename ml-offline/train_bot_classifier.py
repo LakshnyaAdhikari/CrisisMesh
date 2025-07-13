@@ -4,10 +4,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 import joblib
 
-# Load data
 df = pd.read_csv("dataset/bot_vs_human.csv")
 
-# ML pipeline
 pipeline = Pipeline([
     ('tfidf', TfidfVectorizer()),
     ('clf', LogisticRegression())
@@ -15,6 +13,5 @@ pipeline = Pipeline([
 
 pipeline.fit(df['message'], df['label'])
 
-# Save model
 joblib.dump(pipeline, "models/bot_classifier.pkl")
 print("✅ Bot classifier trained and saved.")
