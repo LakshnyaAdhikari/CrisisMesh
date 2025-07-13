@@ -1,6 +1,5 @@
 import joblib
 
-# Load both models
 bot_model = joblib.load("models/bot_classifier.pkl")
 depr_model = joblib.load("models/depr_model.pkl")
 
@@ -15,7 +14,7 @@ def analyze_message(msg):
         "deprivation_score": round(depr, 2)
     }
 
-# For manual test
+
 if __name__ == "__main__":
     msg = input("Enter help message:\n> ")
     result = analyze_message(msg)
