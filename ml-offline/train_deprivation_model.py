@@ -4,7 +4,6 @@ from sklearn.linear_model import LinearRegression
 from sklearn.pipeline import Pipeline
 import joblib
 
-# Load data
 df = pd.read_csv("dataset/depr_scores.csv")
 
 pipeline = Pipeline([
@@ -14,6 +13,5 @@ pipeline = Pipeline([
 
 pipeline.fit(df['message'], df['score'])
 
-# Save model
 joblib.dump(pipeline, "models/depr_model.pkl")
 print("✅ Deprivation model trained and saved.")
