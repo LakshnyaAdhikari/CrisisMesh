@@ -1,1 +1,1 @@
-"# Crisis detector script here" 
+"Crisis detector 
