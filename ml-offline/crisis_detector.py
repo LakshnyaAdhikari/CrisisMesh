@@ -1,1 +1,1 @@
-"Crisis detector 
+Crisis detector 
