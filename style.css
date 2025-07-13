@@ -1,4 +1,4 @@
-/* Universal Box-Sizing and Font */
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -7,21 +7,19 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: #eef2f6; /* Light, calming background */
+    background: #eef2f6; 
     color: #333;
     line-height: 1.6;
 }
 
-/* Container for Centering Content */
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* --- Header --- */
 .header {
-    background: #2c3e50; /* Dark blue */
+    background: #2c3e50;
     color: #fff;
     padding: 15px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -31,14 +29,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* For responsiveness */
+    flex-wrap: wrap;
 }
 
 .header .logo h1 {
     margin: 0;
     font-size: 28px;
     font-weight: 700;
-    color: #ecf0f1; /* Light grey */
+    color: #ecf0f1;
 }
 
 .header .nav-links a {
@@ -50,10 +48,9 @@ body {
 }
 
 .header .nav-links a:hover {
-    color: #3498db; /* Blue on hover */
+    color: #3498db;
 }
 
-/* --- Hero Section --- */
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1600x900/?community,help,crisis') no-repeat center center/cover;
     color: #fff;
@@ -78,7 +75,6 @@ body {
     margin: 0 auto 30px;
 }
 
-/* --- Buttons --- */
 .btn {
     display: inline-block;
     padding: 12px 25px;
@@ -92,7 +88,7 @@ body {
 }
 
 .btn-primary {
-    background: #3498db; /* Blue */
+    background: #3498db;
     color: #fff;
 }
 
@@ -102,7 +98,7 @@ body {
 }
 
 .btn-secondary {
-    background: #2ecc71; /* Green */
+    background: #2ecc71;
     color: #fff;
 }
 
@@ -112,38 +108,35 @@ body {
 }
 
 .btn-submit {
-    background: #f39c12; /* Orange */
+    background: #f39c12; 
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* Space between icon and text */
-}
+    gap: 10px; }
 
 .btn-submit:hover {
     background: #e67e22;
     transform: translateY(-2px);
 }
 
-/* --- Section Styling --- */
 section {
     padding: 60px 0;
-    background: #fff; /* Default section background */
+    background: #fff; 
     margin-bottom: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
 }
 
 .form-section {
-    background: #fefefe; /* Slightly different for form */
+    background: #fefefe; 
 }
 
 .dashboard-link-section {
-    background: #e0f2f7; /* Light blue for dashboard section */
+    background: #e0f2f7;
     text-align: center;
 }
 
-/* --- Card Styling (for forms and dashboard link) --- */
 .form-card, .dashboard-card {
     background: #fff;
     padding: 40px;
@@ -161,7 +154,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px; /* Space between icon and text */
+    gap: 15px; 
 }
 
 .form-card .form-description {
@@ -171,7 +164,6 @@ section {
     font-size: 16px;
 }
 
-/* --- Form Styling --- */
 .form-group {
     margin-bottom: 20px;
 }
@@ -206,20 +198,19 @@ textarea:focus {
 }
 
 textarea {
-    resize: vertical; /* Allow vertical resizing */
+    resize: vertical; 
     min-height: 100px;
 }
 
 select {
-    appearance: none; /* Remove default select arrow */
+    appearance: none; 
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-24.7%200L146.2%20206.5%2034.7%2069.4a17.6%2017.6%200%200%200-24.7%2024.7l130.4%20130.4c6.9%206.9%2017.6%206.9%2024.7%200l130.4-130.4a17.6%2017.6%200%200%200%200-24.7z%22%2F%3E%3C%2Fsvg%3E');
     background-repeat: no-repeat;
     background-position: right 15px center;
     background-size: 12px;
-    padding-right: 40px; /* Make space for custom arrow */
-}
+    padding-right: 40px; }
 
 .help-text {
     font-size: 13px;
@@ -228,9 +219,8 @@ select {
     display: block;
 }
 
-/* --- Footer --- */
 .footer {
-    background: #34495e; /* Darker blue-grey */
+    background: #34495e; 
     color: #ecf0f1;
     padding: 30px 0;
     text-align: center;
@@ -261,7 +251,7 @@ select {
     color: #3498db;
 }
 
-/* --- Responsive Adjustments --- */
+
 @media (max-width: 768px) {
     .header .container {
         flex-direction: column;
